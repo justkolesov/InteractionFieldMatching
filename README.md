@@ -1,8 +1,8 @@
 # Interaction Field Matching: Overcoming Limitations of Electrostatic Models (ICLR 2026)
 
-This is the official `Python` implementation of the [ICLR 2026](https://openreview.net/forum?id=GEsTLuJy1q&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2026%2FConference%2FAuthors%23your-submissions)) paper  **Interaction Field Matching: Overcoming Limitations of Electrostatic Models** by Stepan Manukhov,  [Alexander Kolesov](https://scholar.google.com/citations?user=vX2pmScAAAAJ&hl=ru&oi=ao) , [Vladimir V. Palyulin](https://scholar.google.com/citations?user=IcjnBqkAAAAJ&hl=ru&oi=sra) and [Alexander Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=sra).
+This is the official `Python` implementation of the [ICLR 2026](https://openreview.net/forum?id=GEsTLuJy1q&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2026%2FConference%2FAuthors%23your-submissions)) paper  **Interaction Field Matching: Overcoming Limitations of Electrostatic Models** by S. Manukhov,  [A. Kolesov](https://scholar.google.com/citations?user=vX2pmScAAAAJ&hl=ru&oi=ao) , [V. V. Palyulin](https://scholar.google.com/citations?user=IcjnBqkAAAAJ&hl=ru&oi=sra) and [A. Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=sra).
 
-The repository contains reproducible PyTorch source code for computing maps for both noise-to-data and data-to-data scenarios in high dimensions with neural networks. Examples are provided for toy 3D, conditional/unconditional data generation and unpaired translation tasks.
+The repository contains reproducible PyTorch source code for computing maps for both noise-to-data and data-to-data scenarios in high dimensions with neural networks. Examples are provided for toy 3D, conditional and unconditional data generation and unpaired translation tasks.
 
 <p align="center"><img src="pics/IFM.png" width="400" /></p>
 
@@ -21,8 +21,7 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 - `notebooks/IFMCIFAR10Generation.ipynb` - the notebook of unconditional generation with [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset.
 - `notebooks/IFMConditional.ipynb` - the notebook of conditional generation with [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset.
 - `notebooks/IFMSummer2Winter.ipynb` - the notebook of unpaired translation from [Summer to Winter](https://www.kaggle.com/datasets/balraj98/summer2winter-yosemite) landscapes.
-- `notebooks/IFMCMTranslation.ipynb` - the notebook of unpaired translation from colored '2' to '3' [MNIST]
-(https://yann.lecun.com/exdb/mnist) digits.
+- `notebooks/IFMCMTranslation.ipynb` - the notebook of unpaired translation from colored '2' to '3' [MNIST](https://yann.lecun.com/exdb/mnist) digits.
 
 
 ## Results  IFM Generation
@@ -30,7 +29,7 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 <table align="center">
   <tr>
     <td align="center">
-      <img src="pics/cifar.png" alt="CIFAR-10 32x32" width="95%"/><br/>
+      <img src="pics/cifar10.png" alt="CIFAR-10 32x32" width="95%"/><br/>
       <b>CIFAR-10 32x32</b>
     </td>
     <td align="center">
@@ -44,7 +43,7 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
   <em>Image Generation: Samples obtained by <b>IFM</b> (ours) with the independent plan, electrostatic-based approaches <b>EFM</b> and <b>PFGM</b> & <b>PFGM++</b>, flow-based <b>FM</b>, diffusion-based <b>DDPM</b> and <b>StyleGAN</b>.</em>
 </p>
 
-We also report quantitative results of IFM in Generating task and related works with FID metrics:
+We also report quantitative results of IFM with **FID** metrics and compare with related works:
 
 | Dataset |  **IFM (Ours)** | **EFM** | **PFGM++** | **PFGM** | **FM** | **DDPM** | **StyleGAN** |
 |---------|------------|-----|--------|------|----|------|----------|
@@ -72,7 +71,7 @@ We also report quantitative results of IFM in Generating task and related works 
 
 
 
-We also report quantitative results of IFM in Translation task and related works with CMMD metrics:
+We also report quantitative results of IFM with **CMMD** metrics and compare with related works:
 
 | Dataset / Method | **IFM-MB (our)** | **IFM (our)** | **EFM** | **FM** | **CycleGAN** | **DDIB** |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -84,6 +83,7 @@ We also report quantitative results of IFM in Translation task and related works
 ```console
 pip install -r requirements.txt
 ```
+
 - Download  datasets 
 - Set downloaded dataset in appropriate subfolder in `data/`.
 - Run notebook with appropriate experiment.
